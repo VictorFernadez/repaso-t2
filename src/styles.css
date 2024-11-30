@@ -1,0 +1,275 @@
+/* Asegura que el contenedor principal ocupe toda la altura de la pantalla */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100vh; /* Asegura que la app ocupe todo el alto de la pantalla */
+  display: flex;
+  flex-direction: column; /* Para que los elementos se apilen verticalmente */
+}
+/* 1. Fondo oscuro general */
+body {
+  background-color: #1a1a1a;  /* Gris oscuro */
+  color: white;               /* Texto blanco */
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 2. Estilo de los enlaces (Menú) */
+nav {
+  background-color: #1a1a1a; /* Fondo oscuro para el menú */
+  padding: 15px 30px; /* Añadimos más espacio a los lados del contenedor */
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total del elemento */
+  overflow-x: hidden; /* Desactiva el scroll horizontal */
+}
+
+nav ul {
+  display: flex; /* Distribuir los elementos de manera horizontal */
+  justify-content: center; /* Centrar los elementos */
+  align-items: center; /* Alinea verticalmente */
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  width: 100%; /* Asegura que el ul ocupe el 100% del contenedor */
+}
+
+nav li {
+  margin: 0 10px; /* Reduce el espacio entre los elementos de la lista */
+}
+
+nav a {
+  color: #00ff00; /* Color verde neón */
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px; /* Añadir más espacio dentro de los enlaces */
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  background-color: #00ff00;
+  color: black;
+}
+
+
+/* 3. Banner */
+/* Estilos del banner */
+.banner {
+  width: 100%;
+  height: 85vh; /* Asegura que el banner ocupe todo el alto de la pantalla */
+  position: relative; /* Necesario para que los botones se ubiquen correctamente sobre la imagen */
+}
+
+/* Estilo para las imágenes dentro del banner */
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen cubra todo el contenedor */
+  display: block;
+  object-position: center; /* Asegura que la imagen esté centrada */
+}
+/* Estilo para los botones */
+/* Estilos para los botones */
+.banner button {
+  position: absolute; /* Los colocamos encima de la imagen */
+  top: 50%;
+  transform: translateY(-50%); /* Centrado vertical */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10; /* Aseguramos que los botones estén encima de la imagen */
+}
+
+.banner button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro cuando se pasa el mouse */
+}
+
+.banner button:nth-child(1) { /* Botón Prev */
+  left: 20px;
+}
+
+.banner button:nth-child(2) { /* Botón Next */
+  right: 20px;
+}
+
+/* 4. Estilo de los títulos de sección */
+h1, h2 {
+  font-family: 'Press Start 2P', cursive; /* Fuente retro pixelada */
+  color: #00ff00;
+  text-align: center;
+  margin: 20px 0;
+  text-shadow: 2px 2px 5px #00ff00; /* Sombra verde para un toque gamer */
+}
+
+/* 5. Reloj en la esquina */
+.reloj {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 1px 1px 5px #ff0000; /* Sombra para hacerlo más visible */
+}
+
+
+
+/* 6. Características de los juegos */
+.characteristics {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.characteristics img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.characteristics img:hover {
+  transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el ratón */
+}
+
+/* 7. Sección de por qué comprar */
+.purchase-reason {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.purchase-reason div {
+  width: 200px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.purchase-reason div:hover {
+  transform: scale(1.05); /* Agranda el bloque al pasar el ratón */
+}
+
+.purchase-reason img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.purchase-reason div:hover img {
+  opacity: 0.8; /* Hace la imagen un poco más transparente */
+  transition: opacity 0.3s ease;
+}
+
+/* 8. Pie de página */
+footer {
+  background-color: #1a1a1a;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+footer a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #00ff00;
+  text-shadow: 0px 0px 10px #00ff00;
+}
+
+/* 6. Características de los juegos */
+.caracteristicas-juego {
+  display: flex; /* Hace que los elementos hijos estén alineados horizontalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 30px; /* Espacio entre los elementos */
+  margin: 30px 0; /* Espacio arriba y abajo de la sección */
+}
+
+.caracteristica {
+  text-align: center; /* Centra el texto y la imagen dentro de cada div */
+  max-width: 150px; /* Limita el tamaño máximo de cada "característica" */
+}
+
+.caracteristica img {
+  width: 150px; /* Tamaño de las imágenes */
+  height: 150px; /* Tamaño de las imágenes */
+  border-radius: 10px; /* Bordes redondeados para un estilo más suave */
+  transition: transform 0.3s ease; /* Transición al pasar el ratón */
+}
+
+.caracteristica img:hover {
+  transform: scale(1.2); /* Aumentar el tamaño al pasar el ratón */
+}
+
+.caracteristica h3 {
+  margin-top: 10px; /* Espacio entre la imagen y el texto */
+  font-size: 18px; /* Tamaño del texto */
+  color: #00ff00; /* Color verde neón */
+  text-shadow: 1px 1px 3px rgba(0, 255, 0, 0.7); /* Sombra verde para resaltar el texto */
+}
+/* 9. Bloques de características */
+.caracteristicas-store {
+  display: grid; /* Usamos grid para distribuir los bloques */
+  grid-template-columns: 1fr; /* Solo una columna para cada bloque */
+  gap: 20px; /* Espacio entre los bloques */
+}
+
+.bloque-caracteristica {
+  display: grid; /* Usamos grid para dividir la imagen y el texto en 2 columnas */
+  grid-template-columns: 1fr 1fr; /* Cada columna ocupa el 50% */
+  align-items: center; /* Alinea los elementos verticalmente */
+  gap: 20px; /* Espacio entre la imagen y la descripción */
+}
+
+.bloque-caracteristica img {
+  width: 100%; /* La imagen ocupa el 100% del 50% asignado */
+  height: auto; /* Mantener la proporción de la imagen */
+}
+
+.bloque-caracteristica p {
+  font-size: 16px; /* Tamaño de la fuente */
+  color: #00ff00; /* Color verde */
+  text-shadow: 1px 1px 3px rgba(0, 255, 0, 0.7); /* Sombra verde */
+}
+
+
+
+.footer {
+  background-color: #1a1a1a; /* Fondo oscuro para el footer */
+  padding: 20px 0; /* Añadimos espacio arriba y abajo */
+  text-align: center; /* Centramos el contenido */
+  color: #fff; /* Color blanco para el texto */
+}
+
+.social-icons {
+  display: flex; /* Distribuir los iconos en línea */
+  justify-content: center; /* Centrar los iconos */
+  gap: 20px; /* Espacio entre los iconos */
+}
+
+.icon {
+  font-size: 30px; /* Tamaño de los iconos */
+  color: #00ff00; /* Color verde neón */
+  transition: all 0.3s ease; /* Efecto de transición para el hover */
+}
+
+.icon:hover {
+  color: #ff6600; /* Cambiar color al pasar el ratón */
+  transform: scale(1.1); /* Aumentar el tamaño del icono al hacer hover */
+}
